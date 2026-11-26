@@ -1,0 +1,71 @@
+{
+  "name": "polytrack-desktop",
+  "productName": "PolyTrack",
+  "version": "0.6.0",
+  "description": "PolyTrack - low-poly racing game, desktop edition",
+  "main": "main.js",
+  "author": {
+    "name": "PolyTrack"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "icon": "node scripts/make-icon.js",
+    "start": "electron .",
+    "predist": "npm run icon",
+    "dist": "electron-builder --win",
+    "predist:portable": "npm run icon",
+    "dist:portable": "electron-builder --win portable",
+    "predist:installer": "npm run icon",
+    "dist:installer": "electron-builder --win nsis",
+    "test:smoke": "electron test/smoke.js",
+    "test:gameplay": "electron test/gameplay.js",
+    "test": "npm run test:smoke && npm run test:gameplay",
+    "smoke": "electron test/smoke.js"
+  },
+  "devDependencies": {
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "sharp": "^0.34.5"
+  },
+  "build": {
+    "appId": "com.polytrack.desktop",
+    "productName": "PolyTrack",
+    "copyright": "PolyTrack",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "server.js",
+      "package.json",
+      "build/icon.png",
+      "game/**/*",
+      "!game/.github/**"
+    ],
+    "asar": true,
+    "compression": "maximum",
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "portable": {
+      "artifactName": "PolyTrack-${version}-portable.exe",
+      "requestExecutionLevel": "user"
+    },
+    "nsis": {
+      "artifactName": "PolyTrack-${version}-setup.exe",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "PolyTrack",
+      "uninstallDisplayName": "PolyTrack",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

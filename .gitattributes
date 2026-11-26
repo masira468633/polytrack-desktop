@@ -1,0 +1,32 @@
+* text=auto
+
+# Scripts Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binaires
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.glb binary
+*.bin binary
+*.wasm binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.track binary
+*.exe binary
+
+# Fichiers texte du jeu / docs
+*.svg text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf

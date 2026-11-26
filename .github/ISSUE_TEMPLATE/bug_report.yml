@@ -1,0 +1,74 @@
+name: Bug report
+description: Signaler un problème avec l'application Windows PolyTrack
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de signaler ce problème.
+        Ce dépôt concerne l'emballage Windows. Pour un bug du jeu d'origine,
+        contacte plutôt les auteurs de PolyTrack.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du problème
+      description: Que se passe-t-il exactement ?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire
+      placeholder: |
+        1. Lancer PolyTrack-0.6.0-portable.exe
+        2. Cliquer sur ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version de l'application
+      description: Nom du fichier ou version affichée
+      placeholder: PolyTrack-0.6.0-portable.exe
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Version de Windows
+      placeholder: Windows 11 23H2 (build 22631)
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / captures d'écran
+      description: Colle les messages d'erreur ou joins une capture.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Vérifications
+      options:
+        - label: J'ai cherché une issue existante.
+          required: true
+        - label: J'utilise la dernière version disponible.
+          required: true

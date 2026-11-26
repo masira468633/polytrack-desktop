@@ -1,0 +1,31 @@
+# Dépendances
+node_modules/
+.npm/
+
+# Sorties de build (ne jamais commiter les .exe)
+dist/
+out/
+.cache/
+*.exe
+
+# Artefacts de test
+test/screenshots/
+test/smoke.png
+*.log
+
+# Guide personnel (reste en local, ne pas publier)
+GUIDE-PUBLICATION-GITHUB.txt
+
+# Système et éditeurs
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.suo
+*.user
+
+# Divers
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,50 @@
+name: Feature request
+description: Proposer une amélioration de l'application Windows
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Besoin ou problème
+      description: Quel problème cette fonctionnalité résoudrait-elle ?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution proposée
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives envisagées
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Domaine concerné
+      options:
+        - Application / fenêtre
+        - Performance / rendu
+        - Sauvegardes / données
+        - Multijoueur / en ligne
+        - Build / installation
+        - Documentation
+        - Autre
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Vérifications
+      options:
+        - label: J'ai cherché une demande existante.
+          required: true
